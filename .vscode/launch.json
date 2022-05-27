@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "erp_flutter",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--web-port",
+                "4200",
+               
+            ],
+        },
+        {
+            "name": "erp_flutter (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}

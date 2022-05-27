@@ -1,7 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 Future<bool> confirm(String text,
     {String content = '', String ok = 'OK', String cancel = 'CANCEL'}) async {

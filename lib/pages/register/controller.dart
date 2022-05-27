@@ -2,23 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:water/utils/dlog.dart';
-import '../../utils/api/auth.dart';
-import '../../utils/api/uri.dart';
-import '../../utils/services/storage.dart';
 
-class LoginController extends GetxController {
+class RegisterController extends GetxController {
   var formKey = GlobalKey<FormState>();
   String? email, password;
 
-  Future<void> login() async {
+  @override
+  void onInit() {
+    load();
+    super.onInit();
+  }
+
+  void load() {}
+
+  void register() {
     if (formKey.currentState!.validate()) {
-      var api = AuthApiService<String>(ApiConst.signin);
-      if (!await api.post({"mailId": email!, "password": password!})) {
-        return;
-      }
-      dPrint(api.data);
-      await Prefs.write('token', api.data);
-      Get.offAllNamed('/');
+      // passwordRegister(
+      //   email!,
+      //   password!,
+      // ).then((token) {
+      //   if (token != null) {
+      //     GetStorage().write('token', token);
+      //     Get.offAllNamed('/');
+      //   }
+      // });
     }
   }
 

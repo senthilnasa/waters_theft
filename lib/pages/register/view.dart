@@ -5,13 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_ui/responsive_ui.dart';
 import 'controller.dart';
 
-class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+class RegisterView extends StatelessWidget {
+  const RegisterView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<LoginController>(
-        init: LoginController(),
+    return GetBuilder<RegisterController>(
+        init: RegisterController(),
         initState: (_) {},
         builder: (_) {
           return Scaffold(
@@ -39,7 +39,7 @@ class LoginView extends StatelessWidget {
                                 isRepeatingAnimation: false,
                                 animatedTexts: [
                                   TyperAnimatedText(
-                                    'Login',
+                                    'Register',
                                     speed: const Duration(milliseconds: 180),
                                     textStyle: GoogleFonts.blackOpsOne(
                                       fontSize: 50,
@@ -53,17 +53,6 @@ class LoginView extends StatelessWidget {
                                     ),
                                   ),
                                 ],
-                              ),
-                              const SizedBox(height: 10),
-                              GestureDetector(
-                                onTap: () {
-                                  Get.toNamed("/register");
-                                },
-                                child: Text("Create an account",
-                                    style: GoogleFonts.roboto(
-                                        fontSize: 15,
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.bold)),
                               ),
                               const SizedBox(height: 40),
                               Container(
@@ -113,9 +102,9 @@ class LoginView extends StatelessWidget {
                               ),
                               const SizedBox(height: 40),
                               ElevatedButton.icon(
-                                onPressed: _.login,
-                                icon: const Icon(Icons.login),
-                                label: const Text('Login'),
+                                onPressed: _.register,
+                                icon: const Icon(Icons.arrow_forward),
+                                label: const Text('Register'),
                               ),
                               const SizedBox(height: 20),
                               GestureDetector(
