@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:water/pages/splash/view.dart';
 
 // import 'pages/home/view.dart';
+import 'pages/home/controller.dart';
 import 'pages/home/view.dart';
 import 'pages/login/view.dart';
 import 'pages/register/view.dart';
@@ -14,6 +15,8 @@ import 'utils/services/app.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(AppService());
+  Get.put(HomeController());
+
   await GetStorage.init();
 
   runApp(const MyApp());

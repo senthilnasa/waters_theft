@@ -33,7 +33,7 @@ class AppMenuList extends GetView<HomeController> {
           currentAccountPicture: ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.network(
-              Prefs.read('profilePhoto'),
+              user.userPhotoUrl,
             ),
           ),
           otherAccountsPictures: [
