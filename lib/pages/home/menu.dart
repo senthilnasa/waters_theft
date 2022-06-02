@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../utils/popups.dart';
 import '../../utils/services/app.dart';
-import '../../utils/services/storage.dart';
 import 'controller.dart';
 
 class AppMenuList extends GetView<HomeController> {
@@ -26,9 +24,12 @@ class AppMenuList extends GetView<HomeController> {
           ),
           accountName: Text(
             user.userName.capitalize!,
+            style: const TextStyle(
+                fontWeight: FontWeight.bold, color: Colors.black),
           ),
           accountEmail: Text(
             user.userMailId,
+            style: const TextStyle(color: Colors.black),
           ),
           currentAccountPicture: ClipRRect(
             borderRadius: BorderRadius.circular(8),

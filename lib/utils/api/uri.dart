@@ -18,6 +18,8 @@ abstract class ApiConst {
   /// Data Constants
   ///
   static const String me = 'me';
+  static const String userDashboard = 'userDashboard';
+  static const String usageLog = 'usageLog';
 
   /// staff management
   static const String staff = 'staff';

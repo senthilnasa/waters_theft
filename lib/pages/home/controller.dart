@@ -5,7 +5,7 @@ import '../../utils/utils.dart';
 class HomeController extends GetxController {
   var app = AppService.to;
 
-  int selectedMenuId = 1;
+  int selectedMenuId = 7;
 
   bool showDrawer = false;
 

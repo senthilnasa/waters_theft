@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../utils/services/app.dart';
 import 'controller.dart';
 import 'menu.dart';
+import 'modules/usage_log/view.dart';
+import 'modules/user_dashboard/view.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({Key? key}) : super(key: key);
@@ -53,11 +56,18 @@ class HomePage extends GetView<HomeController> {
                     children: [
                       if (_.selectedMenuId != 0)
                         ListTile(
-                          title: const Text('Home'),
-                          onTap: () {
-                            _.selectedMenuId = 0;
-                            _.update();
-                          },
+                          title: Text(
+                            AppService.to.user!.menu
+                                .firstWhere(
+                                    (e) => e.resourceId == _.selectedMenuId)
+                                .resourceName,
+                            style: const TextStyle(fontSize: 24),
+                          ),
+                          trailing: IconButton(
+                            tooltip: 'Refresh',
+                            icon: const Icon(Icons.refresh),
+                            onPressed: _.reload,
+                          ),
                         ),
                       Expanded(child: _getView(_.selectedMenuId)),
                     ],
@@ -75,10 +85,16 @@ class HomePage extends GetView<HomeController> {
     switch (id) {
       case 0:
         return const Center(child: CircularProgressIndicator());
-
+      case 7:
+        return const UserDashboard();
+      case 8:
+        return UserUsageLog();
       default:
         return const Center(
-          child: Text('Select a menu item'),
+          child: Text(
+            'Under construction',
+            style: TextStyle(fontSize: 24),
+          ),
         );
     }
   }
